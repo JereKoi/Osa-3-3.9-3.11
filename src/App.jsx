@@ -15,6 +15,7 @@ const App = () => {
   useEffect(() => {
     personService.getAll().then(
       (initialPersons) => {
+        console.log('Response from backend:', initialPersons);
         setPersons(initialPersons);
       },
       (error) => {
@@ -23,6 +24,7 @@ const App = () => {
       }
     );
   }, []);
+  
 
   const handleNameChange = (event) => {
     setNewName(event.target.value);
