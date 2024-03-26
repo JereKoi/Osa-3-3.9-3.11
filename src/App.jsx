@@ -13,18 +13,10 @@ const App = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    personService.getAll().then(
-      (initialPersons) => {
-        console.log('Response from backend:', initialPersons);
-        setPersons(initialPersons);
-      },
-      (error) => {
-        // Handle error
-        console.error('Error fetching initial persons:', error);
-      }
-    );
+    personService.getAll().then((initialPersons) => {
+      setPersons(initialPersons);
+    });
   }, []);
-  
 
   const handleNameChange = (event) => {
     setNewName(event.target.value);
